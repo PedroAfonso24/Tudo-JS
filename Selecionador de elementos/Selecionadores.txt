@@ -1,0 +1,39 @@
+get.ElementsByTagName - Selecionador por nome da TAG. Exemplo:
+
+var p1 = window.document.getElementsByTagName('p') [0]
+document.write(p1.innerTextHTML)
+
+//---------------------------------------------------------------------//
+
+getElementById - Selecionador por ID. Exemplo:
+
+<div id="msg">Clique aqui</div>
+
+var d = document.getElementById('msg')
+document.write(d.innerTextHTML)
+
+//---------------------------------------------------------------------//
+
+getElementsByName - Selecionador Por nome
+
+var d = document.getElementsByName('msg')[1]
+window.document.write(d.innerHTML)
+<div nome="msg">Clique aqui</div>
+
+//---------------------------------------------------------------------//
+
+getElementsByClassName - Selecionador por Classe
+
+var d = document.getElementsByClassName()
+window.document.write(d.innerHTML)
+<div class="msg">Clique aqui</div>
+
+//---------------------------------------------------------------------//
+
+querySelector 
+
+var d = document.querySelector('div#msg')
+
+Class é "."
+id é "#"
+

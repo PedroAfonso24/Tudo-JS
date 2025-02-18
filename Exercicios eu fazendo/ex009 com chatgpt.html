@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando</title>
+    <style>
+        body {
+            background-color: aqua;
+        }
+        /* Estilo do Modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            margin: 15% auto;
+            width: 30%;
+            text-align: center;
+        }
+
+        .modal-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificador de País</h1>   
+    Em que país você vive: <input type="text" name="" id="pais">
+
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <div id="res"></div>
+
+    <!-- O Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Bem-vindo ao Verificador de País!</h2>
+            <p>Aproveite as útilidade do meu site.</p>
+            <button class="modal-button" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
+    
+    <script>
+        // Função para mostrar o modal
+        function showModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Mostrar o modal assim que a página for carregada
+        window.onload = function() {
+            showModal();
+        }
+
+        // Função para verificar o país
+        function calcular() {
+            var pais = document.getElementById('pais').value;
+            var res = document.querySelector('div#res');
+
+            if (pais == 'Brasil') {
+                res.innerHTML = '<br>Você é brasileiro';
+            } else {
+                res.innerHTML = '<br>Você não é brasileiro';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+Operadores Ternários:
+
+?
+:
+
+v a r media = 5.5
+
+media > 7? 'Aprovado' : 'Reprovado'
+
+media > 7?(Se a media for maior que 7 ele aparece isso ->)'Aprovado':(Se não ->)'Reprovado'

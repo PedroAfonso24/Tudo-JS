@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eu fazendo</title>
+    <style>
+        div {
+            background-color: green;
+            font: normal 100px arial;
+            width: 350px;
+            height: 250px;
+            text-align: center;
+            line-height: 250px;
+              
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="Entrar()" onmouseout="Sair()">Click</div>   
+
+    <script>
+         var area = document.getElementById('area')
+
+        function clicar() {
+            area.style.background = 'yellow'
+            area.innerHTML = 'Clicou'
+        }
+
+        function Entrar (){
+            area.innerHTML = 'Entrou'
+            area.style.background = 'green'
+            area.style.cursor = 'pointer'
+        }
+
+        function Sair () {
+            area.innerHTML = 'Saiu'
+            area.style.background = 'red'
+        }
+    </script>
+</body>
+</html>

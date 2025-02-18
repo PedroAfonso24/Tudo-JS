@@ -1,0 +1,13 @@
+
+mouseenter - quando o mouse entra dentro da div
+
+mousemove - quando o mouse mover dentro da div
+
+mousedown - quando clicar o segurar o mouse dentro da div
+
+mosueup - quando soltar o botão do mouse dentro da div
+
+click - quando da um click dentro da div
+
+mouseout - quando o mouse vai para fora da div
+
