@@ -12,20 +12,18 @@
             font: normal 18pt arial;
             width: 100px;
         }
+        input[value=Multiplicar]{
+            width: 130px;
+        }
     </style>
-
 </head>
 <body>
     <h1>Somando valores</h1>
 
-    <input type="number" name="txtn1" id="txtn1"> +
-
-    <input type="number" name="txtn2" id="txtn2">
-
-    <input type="button" value="Somar" onclick="somar()">
-
+    <input type="number" name="txtn1" id="txtn1" onkeydown="moverFoco(event, 'txtn2')"> +
+    <input type="number" name="txtn2" id="txtn2" onkeydown="moverFoco(event, 'btnSomar')">
+    <input type="button" value="Somar" id="btnSomar" onclick="somar()">
     <input type="button" value="Limpar" onclick="Limpar()">
-
     <div id="res"><br>Resultado...</div>
 
     <script>
@@ -37,29 +35,29 @@
             var n2 = Number(tn2.value)
             var s = n1 + n2
             var sCv = s.toString().replace('.', ',')
-            res.innerHTML = `<br>A divisão entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
+            res.innerHTML = `<br>A soma entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
         }
 
         function Limpar(){
             document.getElementById('txtn1').value = ''
             document.getElementById('txtn2').value = ''
             document.getElementById('res').innerHTML = '<br>Resultado...'
+            document.getElementById('txtn1').focus()
+        }
 
+        function moverFoco(event, proximoId) {
+            if (event.key === 'Enter') {
+                document.getElementById(proximoId).focus();
+            }
         }
     </script>
 
-
-
     <h1><br><br>Subtraindo Valores</h1>
 
-    <input type="number" name="txtn1" id="sub1"> -
-
-    <input type="number" name="txtn2" id="sub2">
-
-    <input type="button" value="Subtrair" onclick="sub()">
-
+    <input type="number" name="sub1" id="sub1" onkeydown="moverFoco(event, 'sub2')"> -
+    <input type="number" name="sub2" id="sub2" onkeydown="moverFoco(event, 'btnSubtrair')">
+    <input type="button" value="Subtrair" id="btnSubtrair" onclick="sub()">
     <input type="button" value="Limpar" onclick="Limparsub()">
-
     <div id="resub"><br>Resultado...</div>
 
     <script>
@@ -71,30 +69,23 @@
             var n2 = Number(tn2.value)
             var s = n1 - n2
             var sCv = s.toString().replace('.', ',')
-            resub.innerHTML = `<br>A divisão entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
+            resub.innerHTML = `<br>A subtração entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
         }
 
         function Limparsub(){
             document.getElementById('sub1').value = ''
             document.getElementById('sub2').value = ''
             document.getElementById('resub').innerHTML = '<br>Resultado...'
-
+            sub1.focus()
         }
     </script>
 
-
-
-
     <h1><br><br>Multiplicando Valores</h1>
 
-    <input type="number" name="mult1" id="mult1"> x
-
-    <input type="number" name="mult2" id="mult2">
-
-    <input type="button" value="Multiplicar" onclick="mult()">
-
+    <input type="number" name="mult1" id="mult1" onkeydown="moverFoco(event, 'mult2')"> x
+    <input type="number" name="mult2" id="mult2" onkeydown="moverFoco(event, 'btnMultiplicar')">
+    <input type="button" value="Multiplicar" id="btnMultiplicar" onclick="mult()">
     <input type="button" value="Limpar" onclick="Limparmult()">
-
     <div id="mult"><br>Resultado...</div>
 
     <script>
@@ -106,33 +97,24 @@
             var n2 = Number(tn2.value)
             var s = n1 * n2
             var sCv = s.toString().replace('.', ',')
-            mult.innerHTML = `<br>A divisão entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
-            
+            mult.innerHTML = `<br>A multiplicação entre ${n1} e ${n2} é igual a: <strong>${sCv}</strong>`
         }
 
         function Limparmult(){
             document.getElementById('mult1').value = ''
             document.getElementById('mult2').value = ''
             document.getElementById('mult').innerHTML = '<br>Resultado...'
-
+            mult1.focus()
         }
     </script>
 
-
-
-
     <h1><br><br>Dividindo Valores</h1>
 
-    <input type="number" name="div1" id="div1"> /
-
-    <input type="number" name="div2" id="div2">
-
-    <input type="button" value="Dividir" onclick="div()">
-
+    <input type="number" name="div1" id="div1" onkeydown="moverFoco(event, 'div2')"> /
+    <input type="number" name="div2" id="div2" onkeydown="moverFoco(event, 'btnDividir')">
+    <input type="button" value="Dividir" id="btnDividir" onclick="div()">
     <input type="button" value="Limpar" onclick="Limpardiv()">
-
     <div id="div"><br>Resultado...</div>
-
 
     <script>
         function div(){
@@ -150,8 +132,9 @@
             document.getElementById('div1').value = ''
             document.getElementById('div2').value = ''
             document.getElementById('div').innerHTML = '<br>Resultado...'
-
+            div1.focus()
         }
     </script>
+
 </body>
 </html>
